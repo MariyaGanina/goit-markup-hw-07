@@ -79,25 +79,25 @@ textarea {
   border-bottom: 1px solid #ececec;
 }
 
-.header-container {
+.header__container {
   display: flex;
   align-items: center;
 }
 
-.nav-panel {
+.nav {
   display: flex;
 }
 
-.link {
+.nav__link {
   display: block;
 }
 
-.site-contacts .link {
+.nav__contacts .nav__link {
   display: flex;
   align-items: center;
 }
 
-.icon-contacts {
+.nav__icon {
   fill: currentColor;
   margin-right: 10px;
 }
@@ -115,14 +115,14 @@ textarea {
   text-decoration: none;
 }
 
-.header-logo {
+.header__logo {
   display: inline-block;
   padding-top: 24px;
   padding-bottom: 25px;
   margin-right: 93px;
 }
 
-.studio-black {
+.logo__color {
   color: var(--studio-black);
 }
 
@@ -132,11 +132,11 @@ textarea {
 
 /* Меню */
 
-.site-nav {
+.nav__list {
   display: flex;
 }
 
-.site-nav .link {
+.nav__list .nav__link {
   position: relative;
 
   color: var(--primary-text-color);
@@ -152,16 +152,16 @@ textarea {
   transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
-.site-nav .link:hover,
-.site-nav .link:focus {
+.nav__list .nav__link:hover,
+.nav__list .nav__link:focus {
   color: var(--accent-color);
 }
 
-.site-nav .link.current {
+.nav__list .nav__link--current {
   color: var(--accent-color);
 }
 
-.nav-panel .link.current::after {
+.nav .nav__link--current::after {
   content: "";
 
   position: absolute;
@@ -177,24 +177,24 @@ textarea {
 
 /* Контакти */
 
-.site-contacts {
+.nav__contacts {
   display: flex;
   margin-left: auto;
   align-items: baseline;
   justify-content: center;
 }
 
-.site-contacts .link {
+.nav__contacts .nav__link {
   padding-top: 32px;
   padding-bottom: 32px;
 }
 
-.site-nav .item:not(:last-child),
-.site-contacts .item:not(:last-child) {
+.nav__list .nav__item:not(:last-child),
+.nav__contacts .nav__item:not(:last-child) {
   margin-right: 50px;
 }
 
-.site-contacts .contact {
+.nav__contacts .nav__link--text {
   color: var(--ordinary-text-color);
   text-decoration: none;
 
@@ -206,8 +206,8 @@ textarea {
   transition: color var(--animation-orinary) var(--cubic-ordinary);
 }
 
-.site-contacts .contact:hover,
-.site-contacts .contact:focus {
+.nav__contacts .nav__link--text:hover,
+.nav__contacts .nav__link--text:focus {
   color: var(--accent-color);
 }
 
@@ -217,7 +217,8 @@ textarea {
   color: var(--primary-text-color);
 }
 
-.section-title {
+.section-title,
+.activity__title {
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
@@ -234,7 +235,7 @@ textarea {
   margin-bottom: 4px;
 }
 
-.hero-title {
+.hero__title {
   color: var(--back-color);
   width: 696px;
 
@@ -249,7 +250,7 @@ textarea {
   margin-bottom: 30px;
 }
 
-.feature-list .title,
+.advantages__list .title,
 .footer-socials .title,
 .subscribe .title {
   font-size: 14px;
@@ -260,7 +261,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-.feature-list {
+.advantages__list {
   display: flex;
 }
 
@@ -277,7 +278,7 @@ textarea {
 
 /* Текст */
 
-.main-text {
+.advantages__desc {
   color: var(--ordinary-text-color);
 
   font-size: 14px;
@@ -306,7 +307,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-.hero-text {
+.hero--style {
   background-color: var(--back-section-color);
   text-align: center;
   padding: 200px 0;
@@ -320,7 +321,8 @@ textarea {
   letter-spacing: 0.03em;
 }
 
-.visually-hidden {
+.visually-hidden,
+.advantages__title--hidden {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -335,7 +337,7 @@ textarea {
 
 /* Кнопки  */
 
-.hero-button {
+.hero__button {
   color: var(--back-color);
 
   background-color: var(--accent-color);
@@ -388,12 +390,12 @@ textarea {
   margin-bottom: 50px;
 }
 
-.buttons .item:not(:last-child) {
+.buttons .nav__item:not(:last-child) {
   margin-right: 8px;
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.hero__button:hover,
+.hero__button:focus {
   background-color: var(--hero-button-bgcolor);
 }
 
@@ -416,15 +418,15 @@ textarea {
 
 /* Переваги */
 
-.feature-list .item:not(:last-child) {
+.advantages__list .advantages__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.feature-list .item {
+.advantages__list .advantages__item {
   width: 270px;
 }
 
-.icons-wrapper {
+.advantages__icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,16 +441,17 @@ textarea {
 
 /* Діяльність */
 
-.activity {
+.activity,
+.activity__list {
   display: flex;
   padding-top: 0;
 }
 
-.activity .item:not(:last-child) {
+.activity__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.activity .item {
+.activity__item {
   position: relative;
   width: 370px;
   height: 294px;
@@ -539,7 +542,7 @@ textarea {
   gap: 30px;
 }
 
-.examples .item {
+.examples .nav__item {
   flex-basis: calc((100% - 60px) / 3);
 }
 
@@ -672,7 +675,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-.footer-address .item:not(:last-child) {
+.footer-address .nav__item:not(:last-child) {
   margin-bottom: 9px;
 }
 .footer-container {
@@ -739,7 +742,6 @@ textarea {
   padding: 40px;
 
   width: 528px;
-  height: 581px;
   background-color: var(--back-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -755,6 +757,7 @@ textarea {
 }
 
 .modal-close {
+  outline: transparent;
   transition: fill var(--animation-orinary) var(--cubic-ordinary);
 }
 
@@ -913,12 +916,14 @@ textarea {
 
 .checkbox-wrap {
   position: relative;
+  display: inline-flex;
 }
 
 .checkbox-icon {
   position: absolute;
-  top: 4px;
-  left: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-button {
