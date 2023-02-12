@@ -1,5 +1,5 @@
-/* :root {
-   Кольори 
+:root {
+  /* Кольори */
   --primary-text-color: #212121;
   --ordinary-text-color: #757575;
   --accent-color: #2196f3;
@@ -13,10 +13,10 @@
   --icons-color: #afb1b8;
   --text-area: rgba(117, 117, 117, 0.5);
 
-   Анімація 
+  /* Анімація */
   --animation-orinary: 250ms;
   --cubic-ordinary: cubic-bezier(0.4, 0, 0.2, 1);
-} */
+}
 
 body {
   background-color: var(--back-color);
